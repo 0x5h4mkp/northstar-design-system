@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-grey-300);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  max-width: 320px;
+  font-family: var(--font-family-base);
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.card__image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background-color: var(--color-lavender-100);
+}
+
+.card__body {
+  padding: var(--space-4);
+  flex: 1;
+}
+
+.card__title {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy-700);
+}
+
+.card__description {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-grey-700);
+  line-height: var(--line-height-normal);
+}
+
+.card__footer {
+  padding: var(--space-4);
+  border-top: var(--border-width-thin) solid var(--color-grey-100);
+  background-color: var(--color-offwhite);
+}
+
+/* Interactive card states */
+.card--interactive {
+  cursor: pointer;
+}
+
+.card--interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card--interactive:active {
+  transform: translateY(0);
+}
+
+.card--interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}

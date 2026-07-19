@@ -1,0 +1,128 @@
+.nav {
+  font-family: var(--font-family-base);
+  background-color: var(--color-navy-900);
+}
+
+.nav__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  position: relative;
+}
+
+.nav__logo {
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  text-decoration: none;
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.nav__toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+}
+
+.nav__toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: var(--color-lavender-300);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-2) var(--space-1);
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-yellow-500);
+}
+
+.nav__link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+.nav__link--active {
+  color: var(--color-white);
+  border-bottom-color: var(--color-yellow-500);
+}
+
+@media (max-width: 1023px) {
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: 220px;
+    background-color: var(--color-navy-900);
+    padding: var(--space-3) 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav__links--open {
+    display: flex;
+  }
+
+  .nav__link {
+    padding: var(--space-3) var(--space-5);
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .nav__link--active {
+    border-left-color: var(--color-yellow-500);
+    border-bottom: none;
+    background-color: var(--color-navy-700);
+  }
+
+  .nav__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nav__logo-icon {
+  width: 20px;
+  height: 20px;
+}
+}

@@ -1,0 +1,22 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-offwhite);
+  color: var(--color-navy-900);
+  font-family: var(--font-family-base);
+}
+
+h1, h2, h3, h4, h5, h6, p, button, input, textarea, select {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}

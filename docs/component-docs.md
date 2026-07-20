@@ -5,6 +5,11 @@ Purpose, props, and accessibility notes for each component in the Northstar Desi
 ## Button
 Clickable action element for triggering events (submit, open modal, navigate).
 
+**Usage**
+```jsx
+<Button variant="primary" onClick={handleClick}>Label</Button>
+```
+
 | | |
 |---|---|
 | **Props** | `variant` (primary/secondary/ghost), `size` (sm/md/lg), `disabled`, `type` |
@@ -12,6 +17,11 @@ Clickable action element for triggering events (submit, open modal, navigate).
 
 ## Navigation
 Site nav bar with logo and links; collapses to a mobile menu below 1024px.
+
+**Usage**
+```jsx
+<Navigation logoText="Northstar" links={[{ label: 'Home', href: '#home' }]} activeHref="#home" />
+```
 
 | | |
 |---|---|
@@ -21,6 +31,11 @@ Site nav bar with logo and links; collapses to a mobile menu below 1024px.
 ## Form Field
 Labeled input with helper text, error state, and required indicator.
 
+**Usage**
+```jsx
+<FormField label="Email address" type="email" value={email} onChange={handleChange} required />
+```
+
 | | |
 |---|---|
 | **Props** | `label`, `type`, `error`, `helperText`, `required`, `disabled` |
@@ -29,13 +44,23 @@ Labeled input with helper text, error state, and required indicator.
 ## Alert
 Dismissible message banner for success, error, or info feedback.
 
+**Usage**
+```jsx
+<Alert variant="success" title="Success" onDismiss={handleDismiss}>Your changes have been saved.</Alert>
+```
+
 | | |
 |---|---|
 | **Props** | `variant` (success/error/info), `title`, `onDismiss` |
 | **Accessibility** | Errors use `role="alert"` (interrupts); success/info use `role="status"` (polite). Dismiss button has `aria-label`. |
 
 ## Card
-Container for an image, title, description, and optional footer — static or clickable.
+Container for an image, title, description, and optional footer, static or clickable.
+
+**Usage**
+```jsx
+<Card title="Course Title" description="Short description." imageUrl="/image.png" onClick={handleClick} />
+```
 
 | | |
 |---|---|
@@ -45,6 +70,11 @@ Container for an image, title, description, and optional footer — static or cl
 ## Accordion
 Expandable/collapsible stacked sections (FAQ-style).
 
+**Usage**
+```jsx
+<Accordion items={[{ title: 'Question?', content: 'Answer.' }]} />
+```
+
 | | |
 |---|---|
 | **Props** | `items` (array of `{title, content}`) |
@@ -53,15 +83,27 @@ Expandable/collapsible stacked sections (FAQ-style).
 ## Modal
 Overlay dialog for confirmations, blocking background interaction.
 
+**Usage**
+```jsx
+<Modal isOpen={isOpen} onClose={handleClose} title="Confirm" footer={<Button>OK</Button>}>
+  Message content.
+</Modal>
+```
+
 | | |
 |---|---|
 | **Props** | `isOpen`, `onClose`, `title`, `footer` |
-| **Accessibility** | `role="dialog"`, `aria-modal`, `aria-labelledby`. Focus trapped inside while open. Closes on Escape or backdrop click. Focus returns to trigger element on close. |
+| **Accessibility** | `role="dialog"`, `aria-modal`, `aria-labelledby`. Focus moves to the first focusable element on open and is trapped inside while open, cycling correctly with both Tab and Shift+Tab. Closes on Escape or backdrop click. Focus returns to the trigger element on close. |
 
 ## Footer
 Site-wide footer with org name, links, and copyright.
 
+**Usage**
+```jsx
+<Footer orgName="Northstar Learning Collective" links={[{ label: 'Privacy Policy', href: '#privacy' }]} />
+```
+
 | | |
 |---|---|
 | **Props** | `orgName`, `links`, `year` |
-| **Accessibility** | Semantic `<footer>` landmark. Links have visible focus states and sufficient contrast on the navy background. |
+| **Accessibility** | Semantic `<footer>` landmark. Links and copyright text meet WCAG AA contrast against the navy background. |

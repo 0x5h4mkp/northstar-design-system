@@ -9,7 +9,16 @@ export default function Modal({ isOpen, onClose, title, children, footer }) {
     if (!isOpen) return;
 
     previouslyFocused.current = document.activeElement;
-    dialogRef.current?.focus();
+
+    const focusable = dialogRef.current.querySelectorAll(
+      'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (focusable.length > 0) {
+      focusable[0].focus();
+    } else {
+      dialogRef.current?.focus();
+    }
 
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -17,13 +26,13 @@ export default function Modal({ isOpen, onClose, title, children, footer }) {
       }
 
       if (e.key === 'Tab') {
-        const focusable = dialogRef.current.querySelectorAll(
+        const currentFocusable = dialogRef.current.querySelectorAll(
           'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
-        if (focusable.length === 0) return;
+        if (currentFocusable.length === 0) return;
 
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
+        const first = currentFocusable[0];
+        const last = currentFocusable[currentFocusable.length - 1];
 
         if (e.shiftKey && document.activeElement === first) {
           e.preventDefault();

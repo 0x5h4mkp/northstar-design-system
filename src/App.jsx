@@ -47,7 +47,7 @@ function App() {
     <div>
       <Navigation logoText="Northstar" links={navLinks} activeHref="#home" />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem' }}>
+      <main style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Hero */}
         <section style={{
@@ -71,7 +71,7 @@ function App() {
               Northstar Design System
             </h1>
             <p style={{ color: 'var(--color-grey-700)', margin: '1rem 0 0 0' }}>
-              A reusable, accessible component library built for Northstar Learning Collective:
+              A reusable, accessible component library built for Northstar Learning Collective,
               a fictional educational organization.
             </p>
           </div>
@@ -180,7 +180,7 @@ function App() {
           </Modal>
         </section>
 
-      </div>
+      </main>
 
       <Footer orgName="Northstar Learning Collective" links={footerLinks} />
     </div>

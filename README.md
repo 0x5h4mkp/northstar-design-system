@@ -29,11 +29,12 @@ This design system includes a set of design tokens (colors, typography, spacing,
 
 ## Features
 
-- **Design tokens** — centralized colors, typography, spacing, border radii, shadows, and breakpoints
-- **8 reusable components** — Button, Navigation, Form Field, Alert, Card, Accordion, Modal, Footer
-- **Full interaction states** — hover, focus, active, disabled, error, and success states across components
-- **Responsive layout** — navigation collapses into a mobile menu below 1024px; components reflow on smaller screens
-- **Accessible by default** — semantic HTML, visible keyboard focus states, ARIA attributes on interactive components (see `docs/accessibility-review.md`)
+- **Design tokens** — colors, typography, spacing, radii, shadows, breakpoints
+- **8 components** — Button, Navigation, Form Field, Alert, Card, Accordion, Modal, Footer
+- **Full interaction states** — hover, focus, active, disabled, error, success
+- **Responsive** — nav collapses to mobile menu below 1024px
+- **Accessible by default** — semantic HTML, visible focus states, ARIA (see `docs/accessibility-review.md`)
+- **Verified accessible** — automated Lighthouse accessibility audit scored 100/100 (see `docs/accessibility-audit-report.md`)
 
 ## Project Structure
 src/
@@ -51,6 +52,7 @@ technical-reflection.md   - Reflection on design system value
 - This is a demonstration component library, not a production package - Components are not published as an installable npm package.
 - Images used are AI-generated illustrations for demonstration purposes only.
 - No automated test suite; testing was done manually (see `docs/accessibility-review.md` for testing notes).
+- Testing was manual, supplemented by an automated Lighthouse accessibility audit; no full automated test suite
 
 ## Future Improvements
 
